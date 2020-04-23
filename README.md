@@ -1,4 +1,4 @@
-# Data Imbalance 상황에서 GAN을 사용한 이미지 분류 정확도 향상
+# Data Imbalance 상황에서 GAN을 사용한 이미지 분류 정확도 향상 모델 만들기
 
 * 유태원 2017103739 소프트웨어융합학과
 
@@ -19,6 +19,16 @@
 
 * 이 프로젝트는 총 3단계로 진행된다. 
   1. Imbalance 상황에서 이미지를 분류하는 CNN 모델 (VGGNET-16)을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
+  
   2. 1단계에서 학습한 CNN 모델로부터 이미지의 feature를 가져온다. 이 feature를 input으로 하여 GAN 모델을 학습한다. Generator는 Discriminator, Classifier와 적대적으로 학습하게 된다. Discriminator는 생성한 feature가 진짜인지 가짜인지 구분하도록 학습하고, Classifier는 생성한 feature의 클래스를 잘 분류하도록 학습한다.
+  
   3. 실제 이미지의 feature, GAN이 생성한 feature를 input으로 하여 최종 CNN 모델을 학습한다.
 ---
+
+##Schedule
+
+| Contents | March | April |  May  | June  |   Progress   |
+|----------|-------|-------|-------|-------|--------------|
+|  Step 1 CNN 모델   |       |       |       |       |              |
+|  Topic2  |       |       |       |       |              |
+|  Topic2  |       |       |       |       |              |
