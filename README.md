@@ -9,7 +9,7 @@
 
 ## Methods
 
-* 사용되는 데이터셋: [CheXpert Dataset] (https://stanfordmlgroup.github.io/competitions/chexpert/), 이미지 크기: 160x160x3
+* 사용되는 데이터셋: [CheXpert Dataset](https://stanfordmlgroup.github.io/competitions/chexpert/), 이미지 크기: 160x160x3
 * 사용되는 클래스와 데이터 수는 다음과 같다
   * Atelectasis (5,400)
   * Cardiomegaly (5,400)
