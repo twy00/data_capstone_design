@@ -24,7 +24,8 @@
     * __Generator__: 실제 이미지의 feature와 비슷한 가짜 데이터를 생성한다.
     * __Discriminator__: Generator가 생성한 feature가 진짜인지 가짜인지 구분하도록 학습한다.
     * __Classifier__: Generator가 생성한 feature의 클래스를 잘 분류하도록 학습한다.
-  
+
+
 
   3. 실제 이미지의 feature, GAN이 생성한 feature를 input으로 하여 최종 CNN 모델 (VGGNET-16)을 학습한다.
 
