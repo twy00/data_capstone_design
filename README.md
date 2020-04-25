@@ -32,8 +32,8 @@
 
 | Contents                         | March | April |  May  | June  |   Progress   |
 |----------------------------------|-------|-------|-------|-------|--------------|
-|  Step 1 Feature Extractor CNN 모델 학습 및 수정        |   O   |   O   |       |       |       [link](https://docs.google.com/presentation/d/17fStQk0mqY6vxZdNfkpZwDSgthZCXvj2LE6k6RvSzU4/edit?usp=sharing)      |
-|  Step 2 Feature Generator GAN 모델 학습 및 수정        |       |   O   |   O   |       |       [link](https://docs.google.com/presentation/d/1DMkOogXDMHWpZLy-cv-GAIYmbHLA222ekhx11a_SY10/edit?usp=sharing)      |
-|  Step 3 Feature Classifier CNN 모델 학습 및 수정    |       |       |   O   |   O   |      [link](https://docs.google.com/presentation/d/1eOYgJCL1svGvej1J2s8VO7og73X7j9mdoW5FDDgjeJw/edit?usp=sharing)       |
+|  Step 1: Feature Extractor CNN 모델 학습 및 수정        |   O   |   O   |       |       |       [link](https://docs.google.com/presentation/d/17fStQk0mqY6vxZdNfkpZwDSgthZCXvj2LE6k6RvSzU4/edit?usp=sharing)      |
+|  Step 2: Feature Generator GAN 모델 학습 및 수정        |       |   O   |   O   |       |       [link](https://docs.google.com/presentation/d/1DMkOogXDMHWpZLy-cv-GAIYmbHLA222ekhx11a_SY10/edit?usp=sharing)      |
+|  Step 3: Feature Classifier CNN 모델 학습 및 수정    |       |       |   O   |   O   |      [link](https://docs.google.com/presentation/d/1eOYgJCL1svGvej1J2s8VO7og73X7j9mdoW5FDDgjeJw/edit?usp=sharing)       |
 
 
