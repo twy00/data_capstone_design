@@ -22,9 +22,9 @@
   1. Imbalance 상황에서 이미지를 분류하는 CNN 모델 (VGGNET-16)을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
   
   2. 1단계에서 학습한 CNN 모델로부터 이미지의 feature를 가져온다. 이 feature를 input으로 하여 GAN 모델을 학습한다. GAN 모델에서 사용되는 네트워크와 그 역할은 아래와 같다.
-    ** __Generator__: 실제 이미지의 feature와 비슷한 가짜 데이터를 생성한다.
-    ** __Discriminator__: Generator가 생성한 feature가 진짜인지 가짜인지 구분하도록 학습한다.
-    ** __Classifier__: Generator가 생성한 feature의 클래스를 잘 분류하도록 학습한다.
+     * __Generator__: 실제 이미지의 feature와 비슷한 가짜 데이터를 생성한다.
+     * __Discriminator__: Generator가 생성한 feature가 진짜인지 가짜인지 구분하도록 학습한다.
+     * __Classifier__: Generator가 생성한 feature의 클래스를 잘 분류하도록 학습한다.
 
 
 
@@ -34,8 +34,8 @@
 
 | Contents                         | March | April |  May  | June  |   Progress   |
 |----------------------------------|-------|-------|-------|-------|--------------|
-|  Step 1 CNN 모델 학습 및 수정        |   O   |   O   |       |       |              |
-|  Step 2 GAN 모델 학습 및 수정        |       |   O   |   O   |       |              |
-|  Step 3 최종 CNN 모델 학습 및 수정    |       |       |   O   |   O   |              |
+|  Step 1 Feature Extractor CNN 모델 학습 및 수정        |   O   |   O   |       |       |       [link](https://docs.google.com/presentation/d/17fStQk0mqY6vxZdNfkpZwDSgthZCXvj2LE6k6RvSzU4/edit?usp=sharing)      |
+|  Step 2 Feature Generator GAN 모델 학습 및 수정        |       |   O   |   O   |       |       [link](https://docs.google.com/presentation/d/1DMkOogXDMHWpZLy-cv-GAIYmbHLA222ekhx11a_SY10/edit?usp=sharing)      |
+|  Step 3 Feature Classifier CNN 모델 학습 및 수정    |       |       |   O   |   O   |      [link](https://docs.google.com/presentation/d/1eOYgJCL1svGvej1J2s8VO7og73X7j9mdoW5FDDgjeJw/edit?usp=sharing)       |
 
 
