@@ -28,7 +28,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 
 ## 모델 학습 프레임워크
   * 모델 학습 프레임워크는 아래 그림과 같은 구조로 이루어져있다.
-
+<img width="600" alt="framework" src="https://user-images.githubusercontent.com/32740643/85945069-34b86280-b976-11ea-96c3-06c6afd95851.png">
 
   * __Step 1 Train Feature Extractor__: Imbalance 상황에서 이미지를 분류하는 CNN 모델을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
 
