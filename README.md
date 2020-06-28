@@ -16,6 +16,8 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 # 연구 진행 방법
 
 * 사용되는 데이터셋: [CheXpert Dataset](https://stanfordmlgroup.github.io/competitions/chexpert/), 이미지 크기: 160x160x3
+* 데이터셋 예시
+
 * 사용되는 클래스와 데이터 수(train + validation)는 다음과 같다
   * Atelectasis (5,400 + 400)
   * Cardiomegaly (5,400 + 400)
@@ -26,6 +28,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 
 ## 모델 학습 프레임워크
   * 모델 학습 프레임워크는 아래 그림과 같은 구조로 이루어져있다.
+<img width="704" alt="chexpert" src="https://user-images.githubusercontent.com/32740643/85944991-a0e69680-b975-11ea-8816-68abcf0ab02f.png">
 
 
   * __Step 1 Train Feature Extractor__: Imbalance 상황에서 이미지를 분류하는 CNN 모델을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
