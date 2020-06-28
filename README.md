@@ -12,7 +12,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 
 
 
-## Methods
+# 연구 진행 방법
 
 * 사용되는 데이터셋: [CheXpert Dataset](https://stanfordmlgroup.github.io/competitions/chexpert/), 이미지 크기: 160x160x3
 * 사용되는 클래스와 데이터 수(train + validation)는 다음과 같다
@@ -59,7 +59,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 * __Step 2 Train Feature Generator__: 1단계에서 학습한 CNN 모델로부터 이미지의 feature를 가져온다. 이 feature를 input으로 하여 GAN 모델을 학습한다. GAN 모델에서 사용되는 네트워크와 그 역할은 아래와 같다.
      * __Generator__: 실제 이미지의 feature와 비슷한 가짜 데이터를 생성한다.
      * __Discriminator__: Generator가 생성한 feature가 진짜인지 가짜인지 구분하도록 학습한다.
-     * __Classifier__: Generator가 생성한 feature의 클래스를 잘 분류하도록 학습한다.
+     * __Classifier__: Generator가 생성한 feature의 클래스를 잘 분류하도록 학습한다. Classifier의 구조는 Extractor의 16번 줄부터 23번 줄까지의 구조를 사용하며, Step 1에서 학습한 Weight 값을 불러와 사용한다.
  
 ### Generator 구조
 |#|    Type    |   Patch Size   |   Output Size   | Activation Function | Batch Normalization|
@@ -97,12 +97,26 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 |9|Fully Connected|6|1X6|Leaky ReLu|O|
 
 
-## Schedule
+# 결과
 
-| Contents                         | March | April |  May  | June  |   Progress   |
-|----------------------------------|-------|-------|-------|-------|--------------|
-|  Step 1: Feature Extractor CNN 모델 학습 및 수정        |   O   |   O   |       |       |       [link](https://docs.google.com/presentation/d/17fStQk0mqY6vxZdNfkpZwDSgthZCXvj2LE6k6RvSzU4/edit?usp=sharing)      |
-|  Step 2: Feature Generator GAN 모델 학습 및 수정        |       |   O   |   O   |       |       [link](https://docs.google.com/presentation/d/1DMkOogXDMHWpZLy-cv-GAIYmbHLA222ekhx11a_SY10/edit?usp=sharing)      |
-|  Step 3: Feature Classifier CNN 모델 학습 및 수정    |       |       |   O   |   O   |      [link](https://docs.google.com/presentation/d/1eOYgJCL1svGvej1J2s8VO7og73X7j9mdoW5FDDgjeJw/edit?usp=sharing)       |
+## Step 1: Feature Extractor학습
+학습에 사용한 최적의 parameter와 분류 정확도는 다음과 같다. 이 때 분류 정확도는 이후 연구 결과와 비교하기 위한 Baseline으로 사용한다.
+|    Learning Rate    |   Batch Size   |   Epoch   | Accuracy|
+|:------------:|:----------------:|:-----------------:|:-------:|
+|0.0001|40|50|__56.8%__|
+
+## Step 2: Feature Generator 학습
+학습에 사용한 최적의 parameter와 분류 정확도는 다음과 같다.
+|    Generator Learning Rate    |Discriminator learning Rate |Classifier Learning Rate|   Step 당 Batch Size   | Accuracy|
+|:------------:|:----------------:|:-----------------:|:-------:|:------------:|
+|0.001|0.0001|0.0000001|40|__61.7%__|
+
+* 이 때 Classifier는 2 step 마다 가짜 데이터를, 5 step마다 진짜 데이터를 학습하여 Generator와 Classifier Weight 값을 조정하도록 하였다. 
+* 학습결과, Classifier의 분류 정확도가 56.8% -> __61.7__%로 향상된 것을 확인할 수 있었다.
+
+# 결론 및 제언
+* 이번 연구에서는 의료 이미지 데이터 분류에서 발생할 수 있는 Data Imbalance 문제를 GANs 학습 프레임 워크를 도입함으로써 해결하는 것을 목표로 했다. Extractor, Generator, Discriminator, Classifier로 구성된 프 레임워크를 사용했으며, 기존 분류 정확도 56.8%에서 61.7%로 향상시킬 수 있었다. 이를 통해 GANs이 데 이터 분류 학습 분야에서 학습 과정에 도움을 줄 수 있다는 것을 알게 되었다.
+
+* 이번 연구에서 부족했던 점은, Generator가 이미지를 생성할 때 10x10x512 Feature를 그대로 사용한 것이 다. CNN 모델이 깊어질수록 사용하는 Filter가 많아지고 추상적인 Feature를 뽑아내게 되는데, 160x160x3 이미지에 512개의 특징을 추출하면 아무래도 Filter가 각 클래스 데이터의 일반적인 부분이 아닌 특정 데이 터에만 나타날 수 있는 부분을 Feature로 뽑아낼 가능성이 있다. 즉, 모델이 매우 Over Fitting될 가능성이 있는 것이다. 따라서 향후 연구에서는 차원이 높지 않은 CNN모델을 Extractor로 사용하거나, 의미 있는 Feature만 추출할 수 있도록 Pruning하는 등의 방법을 통해 이 문제를 해결해볼 수 있을 것이다.
 
 
