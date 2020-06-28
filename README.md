@@ -24,7 +24,10 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
   * Fleural Effusion (13,500 + 400)
   * No Finding (3,000 + 400)
 
-## 모델 학습 프레임워크 
+## 모델 학습 프레임워크
+  * 모델 학습 프레임워크는 아래 그림과 같은 구조로 이루어져있다.
+
+
   * __Step 1 Train Feature Extractor__: Imbalance 상황에서 이미지를 분류하는 CNN 모델을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
 
 ### Extractor 구조
@@ -53,7 +56,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 |20|Flatten| | 1x1x12,800|||
 |21|Fully Connected|4,096|1X4,096|Leaky ReLu|O|
 |22|Fully Connected|512|1X512|Leaky ReLu|O|
-|23|Fully Connected|6|1X6|Leaky ReLu|O|
+|23|Fully Connected|6|1X6|Softmax|O|
 
 * Extractor 구조의 15번 째 줄의 10x10x512 크기의 Feature를 추출하여 GANs 모델의 Input으로 사용한다.
 
@@ -95,7 +98,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 |6|Flatten| | 1x1x12,800|||
 |7|Fully Connected|4,096|1X4,096|Leaky ReLu|O|
 |8|Fully Connected|512|1X512|Leaky ReLu|O|
-|9|Fully Connected|6|1X6|Leaky ReLu|O|
+|9|Fully Connected|6|1X6|Softmax|O|
 
 
 # 결과
