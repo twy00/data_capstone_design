@@ -18,7 +18,7 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 * 사용되는 데이터셋: [CheXpert Dataset](https://stanfordmlgroup.github.io/competitions/chexpert/), 이미지 크기: 160x160x3
 * 데이터셋 예시
 <img width="300" alt="chexpert" src="https://user-images.githubusercontent.com/32740643/85944991-a0e69680-b975-11ea-8816-68abcf0ab02f.png">
-* 사용되는 클래스와 데이터 수(train + validation)는 다음과 같다.
+* 사용되는 클래스와 데이터 수(train + test)는 다음과 같다.
 
 |  Class  |   Number of data (train + test)  |
 |:---:|:-----------------------:|
