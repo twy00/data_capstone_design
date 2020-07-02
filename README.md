@@ -30,11 +30,6 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
   * 모델 학습 프레임워크는 아래 그림과 같은 구조로 이루어져있다.
 <img width="600" alt="framework" src="https://user-images.githubusercontent.com/32740643/85945069-34b86280-b976-11ea-96c3-06c6afd95851.png">
 
-## 코드 설명
-  * [gan.py](https://github.com/twy00/data_capstone_design/blob/master/gan.py)
-  -> 모델 학습에 필요한 Tensorflow 그래프 생성. feature extractor, generator, classifier 그래프를 생성한다.
-  * [trainOps.py](https://github.com/twy00/data_capstone_design/blob/master/trainOps.py)
-  -> 데이터와 Tensorflow 그래프를 불러온 뒤 모델을 학습한다. 
 
   * __Step 1 Train Feature Extractor__: Imbalance 상황에서 이미지를 분류하는 CNN 모델을 학습한다. 이 과정에서 학습한 모델의 convolutional layer를 거쳐서 나오는 feature는 다음 단계에서 GAN 모델의 input으로 사용된다.
 
@@ -108,6 +103,11 @@ X-Ray, MRI, CT 등 의료 이미지 데이터는 환자의 질병을 미리 예�
 |8|Fully Connected|512|1X512|Leaky ReLu|O|
 |9|Fully Connected|6|1X6|Softmax|O|
 
+## 코드 설명
+  * [gan.py](https://github.com/twy00/data_capstone_design/blob/master/gan.py)
+  -> 모델 학습에 필요한 Tensorflow 그래프 생성. feature extractor, generator, classifier 그래프를 생성한다.
+  * [trainOps.py](https://github.com/twy00/data_capstone_design/blob/master/trainOps.py)
+  -> 데이터와 Tensorflow 그래프를 불러온 뒤 모델을 학습한다. 
 
 # 결과
 
