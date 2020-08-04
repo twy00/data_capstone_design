@@ -2,6 +2,7 @@
 
 * 2020-1 데이터분석캡스톤디자인 
 * [유태원 (소프트웨어융합학과)](http://twy00.github.io)
+* [최종 발표 자료](https://github.com/twy00/data_capstone_design/blob/master/최종발표.pdf)
 
 ## Overview
 
